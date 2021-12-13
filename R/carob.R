@@ -64,7 +64,7 @@ check_terms <- function(x, type, path, group="") {
 		}
 	}
 
-	if ((type=="dataset") & isTRUE(nchar(x$publication) > 0 )) {
+	if ((type=="dataset") & isTRUE(nchar(as.character(x$publication)) > 0 )) {
 		allpubs <- list.files(file.path(path, "references"))
 		pubs <- unlist(strsplit(x$publication, ";"))
 		pubs <- agro::get_simple_URI(pubs)
